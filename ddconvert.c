@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
 			atrack = 0;
 			for(track = 0; track < ZoneTracks[zone]; track++)
 			{
-				if(track == SystemData[0x20 + zone*0xC + atrack])
+				if(atrack < 0xC && track == SystemData[0x20 + zone*0xC + atrack])
 				{
 					memset((void *)(&BlockData0), 0, BLOCKSIZE(zone));
 					memset((void *)(&BlockData1), 0, BLOCKSIZE(zone));
@@ -148,7 +148,7 @@ int main(int argc, char* argv[])
 			atrack = 0xB;
 			for(track = 1; track < ZoneTracks[zone] + 1; track++)
 			{
-				if((ZoneTracks[zone] - track) == SystemData[0x20 + (zone)*0xC + atrack])
+				if(atrack > -1 && (ZoneTracks[zone] - track) == SystemData[0x20 + (zone)*0xC + atrack])
 				{
 					memset((void *)(&BlockData0), 0, BLOCKSIZE(zone));
 					memset((void *)(&BlockData1), 0, BLOCKSIZE(zone));
