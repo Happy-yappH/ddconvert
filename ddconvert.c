@@ -9,7 +9,6 @@
 // Output does have block interleave for correct single block access
 // and empty alternate tracks for correct track indexing.
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
